@@ -8,6 +8,8 @@
 #xclip -o -sel c|cut -f 1,4 --output-d=$'\t'|xclip -i -sel c
 #On Mac 2024-11-18
 output="$(pbpaste|cut -f 2|sed -E 's/ (\| )*(Age )*[0-9]*$//g'
+pbpaste|cut -f 1|sed -E 's/(Simpsonville|Fountain Inn|Gray Court)/\
+&/g')"
 printf "$output"|pbcopy
 
 #= = = = = = = = = 
